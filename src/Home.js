@@ -20,20 +20,24 @@ export default function Home() {
   }, [page]);
 
   return (
-    <><header className='home-header'> 
-      <h2>Page {page}</h2>
-      <div className='buttons'>
-        <button disabled={page <= 1} onClick={() => setPage(page - 1)}>Previous Page</button>
-        <button disabled={page >= lastPage} onClick={() => setPage(page + 1)}>Next Page</button>
-      </div>
-    </header>
-    <body className='home-body'> 
-      <StoryList stories={stories} />
-    </body>
+    <>
+      <header className="home-header">
+        <h2>Page {page}</h2>
+        <div className="buttons">
+          <button disabled={page <= 1} onClick={() => setPage(page - 1)}>
+            Previous Page
+          </button>
+          <button disabled={page >= lastPage} onClick={() => setPage(page + 1)}>
+            Next Page
+          </button>
+        </div>
+      </header>
+      <body className="home-body">
+        <StoryList stories={stories} />
+      </body>
     </>
   );
 }
-
 
 // // call text located in supabase
 // //
